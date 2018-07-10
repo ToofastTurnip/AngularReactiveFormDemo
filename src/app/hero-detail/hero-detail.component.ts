@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component }              from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-hero-detail',
@@ -7,7 +8,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./hero-detail.component.css']
 })
 
-export class HeroDetailComponent implements OnInit {
+export class HeroDetailComponent {
 
   constructor() { }
 
@@ -18,4 +19,10 @@ export class HeroDetailComponent implements OnInit {
 
 export class HeroDetailComponent1 {
   name = new FormControl();
+}
+
+export class HeroDetailComponent2 {
+  heroForm = new FormGroup ({
+    name: new FormControl()
+  });
 }
