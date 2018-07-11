@@ -1,6 +1,5 @@
 import { Component }              from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-hero-detail',
@@ -17,12 +16,26 @@ export class HeroDetailComponent {
 
 }
 
-export class HeroDetailComponent1 {
-  name = new FormControl();
-}
+// export class HeroDetailComponent1 {
+//   name = new FormControl();
+// }
 
-export class HeroDetailComponent2 {
-  heroForm = new FormGroup ({
-    name: new FormControl()
-  });
+// export class HeroDetailComponent2 {
+//   heroForm = new FormGroup ({
+//     name: new FormControl()
+//   });
+// }
+
+export class HeroDetailComponent3 {
+  heroForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }
+
+  createForm() {
+    this.heroForm = this.fb.group({
+      name: ''
+    });
+  }
 }
